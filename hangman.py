@@ -1,6 +1,6 @@
 def hangman(word):
     wrong = 0
-    stage = ["",
+    stages = ["",
             "___________        ",
             "|          |       ",
             "|          |       ",
@@ -11,12 +11,12 @@ def hangman(word):
             "|                  "
             ]
     rletters = list(word)
-    board = ["___"] * len(word)
+    board = ["__"] * len(word)
     win = False
     print("Welcome to Hangman")
     while wrong < len(stages) - 1:
         print("\n")
-        msg = "Guess a letter"
+        msg = "Guess a letter "
         char = input(msg)
         if char in rletters:
             cind = rletters.index(char)
@@ -35,3 +35,5 @@ def hangman(word):
     if not win:
         print("\n".join(stages[0: wrong]))
         print("You lose! It was {}".format(word))
+
+hangman("cat")

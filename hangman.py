@@ -10,3 +10,7 @@ def hangman(word):
             "|         / \      ",
             "|                  "
             ]
+    rletters = list(word)
+    board = ["___"] * len(word)
+    win = False
+    print("Welcome to Hangman")
